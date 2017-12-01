@@ -1,4 +1,4 @@
-class SkillController < ApplicationController
+class SkillsController < ApplicationController
   def index
     @skills = Skill.all
   end

@@ -1,6 +1,7 @@
-class PortfolioController < ApplicationController
+class PortfoliosController < ApplicationController
   def index
-    @portfolios = Portfolio.all
+    @user = User.find(params[:user_id])
+    @portfolios = @user.portfolios.all
   end
 
   def new
