@@ -9,8 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :email,              null: false, default: ""
       t.string :first_name,         null: false, default: ""
       t.string :last_name,          null: false, default: ""
-      t.attachment :photo,          null: false, default: 'avatar.jpg'
-
+      
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

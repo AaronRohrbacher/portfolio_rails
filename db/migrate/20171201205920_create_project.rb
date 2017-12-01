@@ -4,9 +4,7 @@ class CreateProject < ActiveRecord::Migration[5.1]
       t.integer :user_id
       t.integer :project_id
       t.string :name
-      t.string :description
-      t.attachment :screen_shot
-      
+      t.string :description      
     end
   end
 end
