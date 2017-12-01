@@ -5,21 +5,23 @@ class PortfoliosController < ApplicationController
   end
 
   def new
-    @user = current_user
+    @user = User.find(params[:user_id])
     @portfolio = @user.portfolios.new
   end
 
   def create
-    @portfolio = Portfolio.new(portfolio_params)
+    @user = User.find(params[:user_id])
+    @portfolio = @user.portfolios.new(portfolio_params)
     if @portfolio.save
       flash[:notice] = "portfolio successfully added!"
-      redirect_to portfolio_path(@portfolio)
+      redirect_to user_portfolios_path(@user)
     else
       render :new
     end
   end
 
   def show
+    @user = User.find(params[:user_id])
     @portfolio = Portfolio.find(params[:id])
   end
 
