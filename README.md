@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to my portfolio site! I look forward to working with you to provide high-quality web applications. Here are a few of my strengths:
 
-Things you may want to cover:
+* Working with Ruby on Rails or PHP to create functional user interfaces and data-driven web applications.
 
-* Ruby version
+* Working with PosgreSQL and/or mySQL to create accurate, validated databases.
 
-* System dependencies
+* Thinking ahead about database input, to minimize future maintenance and upkeep.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Creating functional user interfaces that make sense to the user- features should be able to be found!
