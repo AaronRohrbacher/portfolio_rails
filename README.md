@@ -9,3 +9,5 @@ Welcome to my portfolio site! I look forward to working with you to provide high
 * Thinking ahead about database input, to minimize future maintenance and upkeep.
 
 * Creating functional user interfaces that make sense to the user- features should be able to be found!
+
+* Creating test suites for fully testable applications.
