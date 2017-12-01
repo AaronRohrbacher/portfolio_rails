@@ -45,7 +45,7 @@ class ProjectController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:name, :description, :user_id) ## Rails 4 strong params usage
+    params.require(:project).permit(:name, :description, :user_id, :project_id) ## Rails 4 strong params usage
   end
 
 end
