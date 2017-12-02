@@ -5,14 +5,18 @@ class ProjectsController < ApplicationController
 
   def new
     @user = current_user
-    @project = @user.projects.new
+    @portfolio = Portfolio.find(params[:portfolio_id])
+    @project = @portfolio.user.projects.new
   end
 
   def create
-    @project = Project.new(project_params)
+    @user = current_user
+    @portfolio = Portfolio.find(params[:portfolio_id])
+    @project = @portfolio.user.projects.new(project_params)
+    binding.pry
     if @project.save
       flash[:notice] = "project successfully added!"
-      redirect_to project_path(@project)
+      redirect_to user_portfolio_path(@user, @portfolio)
     else
       render :new
     end
@@ -45,7 +49,7 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:name, :description, :user_id, :project_id) ## Rails 4 strong params usage
+    params.require(:project).permit(:name, :description, :user_id, :portfolio_id) ## Rails 4 strong params usage
   end
 
 end
