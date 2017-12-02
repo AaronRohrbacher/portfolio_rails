@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :portfolios do
-      resources :projects
-      resources :skills
+      resources :projects do
+        resources :skills
+      end
     end
   end
 

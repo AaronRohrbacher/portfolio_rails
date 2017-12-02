@@ -4,17 +4,16 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @user = current_user
+    @user = User.find(params[:user_id])
     @portfolio = Portfolio.find(params[:portfolio_id])
-    @project = @portfolio.user.projects.new
+    @project = Project.new
   end
 
   def create
     @user = current_user
     @portfolio = Portfolio.find(params[:portfolio_id])
     @project = @portfolio.user.projects.new(project_params)
-    binding.pry
-    if @project.save
+    if @project.save!
       flash[:notice] = "project successfully added!"
       redirect_to user_portfolio_path(@user, @portfolio)
     else
