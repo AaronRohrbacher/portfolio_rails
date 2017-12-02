@@ -13,5 +13,7 @@
 
 <h3> Projects: </h3>
 <% @user.projects.each do |project| %>
-  <p><%= project.name %></p>
+  <p><strong><%= project.name %></strong></p>
+  <p><%= project.description %></p>
+  <hr>
 <% end %>
