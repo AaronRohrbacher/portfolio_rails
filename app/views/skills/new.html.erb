@@ -1,0 +1,14 @@
+<%= form_for [@user, @portfolio, @project, @skill] do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, :class => "form-control" %>
+  </div>
+  <%= f.hidden_field :portfolio_id, :value => @portfolio.id %>
+  <%= f.hidden_field :project_id, :value => @project.id %>
+
+  <%= f.button :Submit, :class => 'btn btn-info' %>
+<% end %>

@@ -1,4 +1,8 @@
 <h3><%= @portfolio.name %></h3>
 <% @portfolio.projects.each do |project| %>
-<p><%= project.name %></p>
+  <p><%= project.name %></p>
+<% end %>
+
+<% @portfolio.skills.each do |skill| %>
+  <p><%= skill.name %></p>
 <% end %>

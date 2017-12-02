@@ -6,15 +6,16 @@ class SkillsController < ApplicationController
   def new
     @user = current_user
     @portfolio = Portfolio.find(params[:portfolio_id])
-    @skill = @portfolio.skills.new
+    @project = Project.find(params[:project_id])
+    @skill = Skill.new
   end
 
   def create
     @user = current_user
     @portfolio = Portfolio.find(params[:portfolio_id])
-
-    @skill = @portfolio.skills.new(skill_params)
-    if @skill.save
+    @project = Project.find(params[:project_id])
+    @skill = @portfolio.user.skills.new(skill_params)
+    if @skill.save!
       flash[:notice] = "skill successfully added!"
       redirect_to skill_path(@skill)
     else
@@ -34,7 +35,7 @@ class SkillsController < ApplicationController
     @skill = Skill.find(params[:id])
     if @skill.update(skill_params)
       flash[:notice] = "skill successfully updated!"
-      redirect_to  skill_path
+      redirect_to user_portfolio_path(@user, @portfolio)
     else
       render :edit
     end
@@ -49,7 +50,7 @@ class SkillsController < ApplicationController
 
   private
   def skill_params
-    params.require(:skill).permit(:name, :description, :user_id, :project_id) ## Rails 4 strong params usage
+    params.require(:skill).permit(:name, :description, :user_id, :project_id, :portfolio_id) ## Rails 4 strong params usage
   end
 
 end
