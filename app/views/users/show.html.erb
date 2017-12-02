@@ -1,0 +1,17 @@
+<h3><%= @user.first_name + ' ' + @user.last_name %></h3>
+
+<h3>Portfolios:</h3>
+
+<% @user.portfolios.each do |portfolio| %>
+  <p><%= link_to portfolio.name, user_portfolio_path(@user, portfolio) %></p>
+<% end %>
+
+<h3> Skills: </h3>
+<% @user.skills.each do |skill| %>
+  <p><%= skill.name %></p>
+<% end %>
+
+<h3> Projects: </h3>
+<% @user.projects.each do |project| %>
+  <p><%= project.name %></p>
+<% end %>
