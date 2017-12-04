@@ -11,3 +11,9 @@ Welcome to my portfolio site! I look forward to working with you to provide high
 * Creating functional user interfaces that make sense to the user- features should be able to be found!
 
 * Creating test suites for fully testable applications.
+
+
+This project proved to be truly frustrating, and it is far from done or in 'portfolio quality' condition! However, I learned A LOT about 'polymorphic' relationships in ActiveRecord, and I'm grateful for having an understanding of it now.
+
+Check out this great explanation of polymorphic (among other) relationships. Very thorough and understandable!
+url(https://launchschool.com/blog/understanding-polymorphic-associations-in-rails)
