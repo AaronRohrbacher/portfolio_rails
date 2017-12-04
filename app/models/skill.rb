@@ -1,5 +1,3 @@
 class Skill < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :project
-  belongs_to :portfolio
+  belongs_to :skill_association, polymorphic: true
 end
