@@ -1,5 +1,4 @@
 class Project < ActiveRecord::Base
   has_many :skills
-  belongs_to :portfolio
-  belongs_to :user
+  belongs_to :project_association, polymorphic: true
 end

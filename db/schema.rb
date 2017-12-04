@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 20171201210428) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "portfolio_id"
     t.string "name"
     t.string "description"
+    t.integer "project_association_id"
+    t.string "project_association_type"
   end
 
   create_table "skills", force: :cascade do |t|
