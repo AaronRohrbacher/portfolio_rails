@@ -1,4 +1,9 @@
-<%= form_for [@user, @skill] do |f| %>
+<% if params[:portfolio_id] %>
+  <% path = [@user, @association, @skill] %>
+<% else %>
+  <% path = [@association, @skill] %>
+<% end %>
+<%= form_for path do |f| %>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, :class => "form-control" %>

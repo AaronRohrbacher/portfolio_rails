@@ -5,12 +5,22 @@ class SkillsController < ApplicationController
 
   def new
     @user = current_user
-    @skill = Skill.new
+    if params[:portfolio_id]
+      @association = Portfolio.find(params[:portfolio_id])
+    else
+      @association = current_user
+    end
+      @skill = Skill.new
   end
 
   def create
     @user = current_user
-    @skill = @user.skills.new(skill_params)
+    if params[:portfolio_id]
+      @association = Portfolio.find(params[:portfolio_id])
+    else
+      @association = @user
+    end
+    @skill = @association.skills.new(skill_params)
     if @skill.save!
       flash[:notice] = "skill successfully added!"
       redirect_to user_path(@user)

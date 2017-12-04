@@ -6,3 +6,4 @@
 <% @portfolio.skills.each do |skill| %>
   <p><%= skill.name %></p>
 <% end %>
+<%= link_to 'Add a skill to a portfolio', new_user_portfolio_skill_path(@user, @portfolio) %>
