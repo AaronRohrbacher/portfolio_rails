@@ -10,6 +10,7 @@
 <% @user.skills.each do |skill| %>
   <p><%= skill.name %></p>
 <% end %>
+<%= link_to 'Add A Skill', new_user_skill_path(@user) %>
 
 <h3> Projects: </h3>
 <% @user.projects.each do |project| %>
